@@ -1,71 +1,94 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000">
-    <title>QR Code Scanner | WAHYU.NET</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        video {
-            width: 90%;
-            max-width: 500px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-        .btn {
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #20a8d8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-size: 16px;
-        }
-        .btn:hover {
-            background-color: #1a86b6;
-        }
-        .footer {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        .footer a {
-            color: #20a8d8;
-            text-decoration: none;
-        }
-    </style>
-    <script type="text/javascript" src="llqrcode.js"></script>
-    <script type="text/javascript" src="mikhmon_webqr.js?v1"></script>
-    <script async src="https://arc.io/widget.min.js#rDZc6s4f"></script>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#000000" />
+  
+<title>Code QRScan</title>
+  <style>
+    body{
+      background-color: #000000;
+      color :#ffffff;
+    }
+    video {
+      width: 100%    !important;
+      height: auto   !important;
+    }
+    .btn{
+      margin-top:5px;
+      margin-bottom:10px;
+      padding:5px;
+      background-color: #f2f2f2;
+      color: #000000;
+      border-radius:3px;
+      width: 150px;
+      cursor: pointer;
+    }
+    .camera{
+      width: 95%;
+    }
+    a{
+      text-decoration: none;
+      color:#20a8d8;
+    }
+    @font-face {
+      font-family: 'fontello';
+      src: url('./font/fontello.eot?14907215');
+      src: url('./font/fontello.eot?14907215#iefix') format('embedded-opentype'),
+           url('./font/fontello.woff?14907215') format('woff'),
+           url('./font/fontello.ttf?14907215') format('truetype'),
+           url('./font/fontello.svg?14907215#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+    .icon
+    {
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      margin-left: .2em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+<script type="text/javascript" src="llqrcode.js"></script>
+<script type="text/javascript" src="mikhmon_webqr.js?v1"></script>
+<script async src="https://arc.io/widget.min.js#rDZc6s4f"></script>  
 </head>
 <body>
-    <div class="container">
-        <h2>QR Code Scanner</h2>
+ <center>
+    <div id="main">
+      <div id="mainbody">
         <div class="camera" id="outdiv"></div>
-        <button class="btn" id="reload" onclick="location.reload();">🔄 Reload Camera</button>
-        <a class="btn" href="intent://wahyusudrajad.github.io/myqr#Intent;scheme=http;package=com.android.chrome;end">🌐 Open in Chrome</a>
+        <div style="display: table;">
+          <div style="display: table-row;">
+            <div style="display: table-cell; padding:3px;">
+              <div class="btn" id="reload" onclick="location.reload();"><i class="icon icon-arrows-cw">&#xe800;</i> Reload Camera</div>
+            </div>
+            <div style="display: table-cell; padding:3px;">
+              <a class="btn" href="intent://wahyusudrajad.github.io/net_qr#Intent;scheme=http;package=com.android.chrome;end"><i class="icon icon-chrome-1">&#xf268;</i> Buka di Chrome</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer">
-        RT-RW.NET || WAHYU.NET || QR CODE SCANNER<br>
-        Powered by <a href="https://github.com/wahyusudrajad">Wahyu Sudrajad</a>
-    </div>
-    <canvas style="display:none;" id="qr-canvas" width="800" height="600"></canvas>
-    <script type="text/javascript">load();</script>
+        <a style="color:white"> Jika membuka kamera depan, mohon tekan "Reload Camera",</a><br><i style="color:white;style="font-size: 13px;"> Jika tidak membuka kamera, mohon tekan Buka di Chrome, jika menggunakan browser lain, ketik di browser https://wahyusudrajad.github.io/net_qr </i> <br>
+    <div>--- Voucher Code Scanner ---<br><a style="font-size: 10px;">(c) 2023 Wahyu Sudrajad Co. Software Limited</a></div>
+</center>
+<canvas style="display:none;" id="qr-canvas" width="800" height="600"></canvas>
+<script type="text/javascript">load();</script>
+<script>
+  const _0xdec7=['mikhmon','2UvEJff','21LNjHDC','119920fDFtXe','106868MICxeC','36349RDkcdo','9186STSyFO','getElementById','269939fhhbHG','1pdRxag','135287JbeEQd','https://wahyusudrajad.github.io','82884HoljCN','innerHTML','href','Voucher Code - QR Scanner','3WVEXaa','16SYTZRq'];const _0x21bd69=_0x2407;(function(_0x4408b0,_0x4ed70c){const _0x4b9e9e=_0x2407;while(!![]){try{const _0xeb4302=parseInt(_0x4b9e9e(0xb8))*-parseInt(_0x4b9e9e(0xb3))+-parseInt(_0x4b9e9e(0xb7))+parseInt(_0x4b9e9e(0xb0))*parseInt(_0x4b9e9e(0xb9))+parseInt(_0x4b9e9e(0xb5))*-parseInt(_0x4b9e9e(0xc0))+-parseInt(_0x4b9e9e(0xbb))*parseInt(_0x4b9e9e(0xbf))+-parseInt(_0x4b9e9e(0xb2))+-parseInt(_0x4b9e9e(0xb4))*-parseInt(_0x4b9e9e(0xb1));if(_0xeb4302===_0x4ed70c)break;else _0x4408b0['push'](_0x4408b0['shift']());}catch(_0x47dd9d){_0x4408b0['push'](_0x4408b0['shift']());}}}(_0xdec7,0x228ec));let e=document[_0x21bd69(0xb6)](_0x21bd69(0xc1));function _0x2407(_0x299110,_0xef84e6){_0x299110=_0x299110-0xb0;let _0xdec75e=_0xdec7[_0x299110];return _0xdec75e;}e[_0x21bd69(0xbc)]=_0x21bd69(0xbe),e[_0x21bd69(0xbd)]=_0x21bd69(0xba);
+</script>
 </body>
 </html>
