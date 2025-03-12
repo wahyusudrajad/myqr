@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>QR Code Scanner | WAHYU.NET</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        video {
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #20a8d8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background-color: #1a86b6;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .footer a {
+            color: #20a8d8;
+            text-decoration: none;
+        }
+    </style>
+    <script type="text/javascript" src="llqrcode.js"></script>
+    <script type="text/javascript" src="mikhmon_webqr.js?v1"></script>
+    <script async src="https://arc.io/widget.min.js#rDZc6s4f"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>QR Code Scanner</h2>
+        <div class="camera" id="outdiv"></div>
+        <button class="btn" id="reload" onclick="location.reload();">🔄 Reload Camera</button>
+        <a class="btn" href="intent://wahyusudrajad.github.io/myqr#Intent;scheme=http;package=com.android.chrome;end">🌐 Open in Chrome</a>
+    </div>
+    <div class="footer">
+        RT-RW.NET || WAHYU.NET || QR CODE SCANNER<br>
+        Powered by <a href="https://github.com/wahyusudrajad">Wahyu Sudrajad</a>
+    </div>
+    <canvas style="display:none;" id="qr-canvas" width="800" height="600"></canvas>
+    <script type="text/javascript">load();</script>
+</body>
+</html>
